@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.company.simpleattendance.app-mergeDebugResources-26:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "/Users/nitinsharma/.gradle/caches/8.12/transforms/d8b5be5c8e60cd6c214f80c869e60026/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

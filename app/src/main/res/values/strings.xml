@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Attendance</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="mark_in">Mark IN</string>
+    <string name="mark_out">Mark OUT</string>
+    <string name="view_past_attendance">View Past Attendance</string>
+    <string name="error_invalid_credentials">Invalid credentials. Please try again.</string>
+    <string name="error_device_already_active">This account is already active on another device. To resolve this, please contact the administrator.</string>
+    <string name="error_session_invalid">Contact Admin if Login is disabled.</string>
+    <string name="error_wifi_not_approved">you are not connected to an approved Wi-Fi network.</string>
+    <string name="attendance_marked_in">Attendance marked IN successfully</string>
+    <string name="attendance_marked_out">Attendance marked OUT successfully</string>
+</resources>

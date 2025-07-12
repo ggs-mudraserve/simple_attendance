@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="absent_color">#F44336</color>
+    <color name="accent_color">#FF4081</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="error_color">#F44336</color>
+    <color name="half_day_color">#FF9800</color>
+    <color name="holiday_color">#9E9E9E</color>
+    <color name="late_color">#FFEB3B</color>
+    <color name="present_color">#4CAF50</color>
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark_color">#1976D2</color>
+    <color name="secondary_text_color">#757575</color>
+    <color name="success_color">#4CAF50</color>
+    <color name="text_color">#212121</color>
+    <color name="warning_color">#FF9800</color>
+    <string name="app_name">Simple Attendance</string>
+    <string name="attendance_marked_in">Attendance marked IN successfully</string>
+    <string name="attendance_marked_out">Attendance marked OUT successfully</string>
+    <string name="email">Email</string>
+    <string name="error_device_already_active">This account is already active on another device. To resolve this, please contact the administrator.</string>
+    <string name="error_invalid_credentials">Invalid credentials. Please try again.</string>
+    <string name="error_session_invalid">Contact Admin if Login is disabled.</string>
+    <string name="error_wifi_not_approved">you are not connected to an approved Wi-Fi network.</string>
+    <string name="login">Login</string>
+    <string name="mark_in">Mark IN</string>
+    <string name="mark_out">Mark OUT</string>
+    <string name="password">Password</string>
+    <string name="view_past_attendance">View Past Attendance</string>
+    <style name="Theme.SimpleAttendance" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_dark_color</item>
+        <item name="colorAccent">@color/accent_color</item>
+        <item name="android:colorBackground">@color/background_color</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+</resources>

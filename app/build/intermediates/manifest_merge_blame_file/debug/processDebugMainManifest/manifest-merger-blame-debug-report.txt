@@ -1,0 +1,108 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.company.simpleattendance"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+12-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:5:5-76
+12-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:5:22-73
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:6:5-79
+13-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:6:22-76
+14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:7:5-79
+14-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:7:22-76
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:8:5-81
+15-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:8:22-78
+16
+17    <permission
+17-->[androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+18        android:name="com.company.simpleattendance.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.company.simpleattendance.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:10:5-33:19
+24        android:allowBackup="true"
+24-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:11:9-35
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+26        android:debuggable="true"
+27        android:extractNativeLibs="false"
+28        android:icon="@mipmap/ic_launcher"
+28-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:12:9-43
+29        android:label="@string/app_name"
+29-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:13:9-41
+30        android:testOnly="true"
+31        android:theme="@style/Theme.SimpleAttendance" >
+31-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:14:9-54
+32        <activity
+32-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:16:9-23:20
+33            android:name="com.company.simpleattendance.LoginActivity"
+33-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:17:13-42
+34            android:exported="true" >
+34-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:18:13-36
+35            <intent-filter>
+35-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:19:13-22:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:20:17-69
+36-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:20:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:21:17-77
+38-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:21:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity
+41-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:25:9-27:40
+42            android:name="com.company.simpleattendance.MainActivity"
+42-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:26:13-41
+43            android:exported="false" />
+43-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:27:13-37
+44        <activity
+44-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:29:9-32:58
+45            android:name="com.company.simpleattendance.CalendarActivity"
+45-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:30:13-45
+46            android:exported="false"
+46-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:31:13-37
+47            android:parentActivityName="com.company.simpleattendance.MainActivity" />
+47-->/Users/nitinsharma/Documents/app_version/simple_attendance/app/src/main/AndroidManifest.xml:32:13-55
+48
+49        <provider
+49-->[androidx.emoji2:emoji2:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/26555aa8aaa0fe3ac3d259bc9bb3b9b8/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+50            android:name="androidx.startup.InitializationProvider"
+50-->[androidx.emoji2:emoji2:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/26555aa8aaa0fe3ac3d259bc9bb3b9b8/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+51            android:authorities="com.company.simpleattendance.androidx-startup"
+51-->[androidx.emoji2:emoji2:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/26555aa8aaa0fe3ac3d259bc9bb3b9b8/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+52            android:exported="false" >
+52-->[androidx.emoji2:emoji2:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/26555aa8aaa0fe3ac3d259bc9bb3b9b8/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+53            <meta-data
+53-->[androidx.emoji2:emoji2:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/26555aa8aaa0fe3ac3d259bc9bb3b9b8/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+54                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+54-->[androidx.emoji2:emoji2:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/26555aa8aaa0fe3ac3d259bc9bb3b9b8/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+55                android:value="androidx.startup" />
+55-->[androidx.emoji2:emoji2:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/26555aa8aaa0fe3ac3d259bc9bb3b9b8/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+56            <meta-data
+56-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/f629caa3cfa0ff12697ecd0f5f8749dd/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+57                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+57-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/f629caa3cfa0ff12697ecd0f5f8749dd/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+58                android:value="androidx.startup" />
+58-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/f629caa3cfa0ff12697ecd0f5f8749dd/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+59        </provider>
+60    </application>
+61
+62</manifest>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attendance Dashboard"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/primary_color" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginBottom="48dp"
+        android:textColor="@color/secondary_text_color" />
+
+    <Button
+        android:id="@+id/markInButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="@string/mark_in"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/success_color" />
+
+    <Button
+        android:id="@+id/markOutButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="@string/mark_out"
+        android:textSize="18sp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/warning_color" />
+
+    <Button
+        android:id="@+id/viewAttendanceButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/view_past_attendance"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primary_color" />
+
+    <!-- TEST LOGOUT BUTTON - REMOVE IN PRODUCTION -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Logout (Test Only)"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/error_color"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+</LinearLayout>

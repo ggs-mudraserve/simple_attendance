@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark_color">#1976D2</color>
+    <color name="accent_color">#FF4081</color>
+    <color name="error_color">#F44336</color>
+    <color name="success_color">#4CAF50</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="text_color">#212121</color>
+    <color name="secondary_text_color">#757575</color>
+    
+    <!-- Calendar colors -->
+    <color name="present_color">#4CAF50</color>
+    <color name="late_color">#FFEB3B</color>
+    <color name="half_day_color">#FF9800</color>
+    <color name="absent_color">#F44336</color>
+    <color name="holiday_color">#9E9E9E</color>
+</resources>

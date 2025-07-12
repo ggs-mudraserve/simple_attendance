@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.company.simpleattendance.app-mergeDebugResources-26:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/Users/nitinsharma/.gradle/caches/8.12/transforms/d8b5be5c8e60cd6c214f80c869e60026/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}
