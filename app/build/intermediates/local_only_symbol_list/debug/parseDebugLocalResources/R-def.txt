@@ -19,9 +19,10 @@ id closeButton
 id dateTextView
 id emailEditText
 id errorTextView
+id greetingTextView
 id inTimeTextView
 id loginButton
-id logoutButton
+id loginIdTextView
 id markInButton
 id markOutButton
 id monthYearTextView

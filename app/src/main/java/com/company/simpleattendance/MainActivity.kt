@@ -64,6 +64,23 @@ class MainActivity : AppCompatActivity() {
         loadTodayAttendance()
     }
 
+    override fun onResume() {
+        super.onResume()
+        
+        // Check if user is still logged in
+        if (!sessionManager.isLoggedIn()) {
+            redirectToLogin()
+            return
+        }
+        
+        // Refresh WiFi manager when app resumes to ensure fresh connection info
+        wifiManager = getSystemService(Context.WIFI_SERVICE) as WifiManager
+        // Clear any previous error states
+        statusTextView.visibility = View.GONE
+        // Reload attendance data to update button states
+        loadTodayAttendance()
+    }
+
     private fun initViews() {
         greetingTextView = findViewById(R.id.greetingTextView)
         loginIdTextView = findViewById(R.id.loginIdTextView)
@@ -140,12 +157,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadTodayAttendance() {
         setLoading(true)
-        val userId = sessionManager.getUserId() ?: return
+        val userId = sessionManager.getUserId()
+        val token = sessionManager.getToken()
+        
+        if (userId == null || token == null) {
+            setLoading(false)
+            handleSessionExpired()
+            return
+        }
+        
         val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
         
         apiClient.makeRestRequest(
             endpoint = "/attendance?employee_id=eq.$userId&attendance_date=eq.$today&select=in_time,out_time",
-            token = sessionManager.getToken()
+            token = token
         ) { success, response ->
             runOnUiThread {
                 setLoading(false)
@@ -154,15 +179,17 @@ class MainActivity : AppCompatActivity() {
                         val attendanceType = object : com.google.gson.reflect.TypeToken<Array<Attendance>>() {}.type
                         val attendanceList = gson.fromJson<Array<Attendance>>(response, attendanceType)
                         updateButtonStates(if (attendanceList.isNotEmpty()) attendanceList[0] else null)
+                        // Clear any previous error messages on success
+                        statusTextView.visibility = View.GONE
                     } catch (e: JsonSyntaxException) {
-                        Toast.makeText(this@MainActivity, "Error parsing attendance data", Toast.LENGTH_SHORT).show()
+                        showError("Error parsing attendance data")
                         updateButtonStates(null)
                     }
                 } else {
-                    if (response.contains("401")) {
+                    if (response.contains("401") || response.contains("PGRST301")) {
                         handleSessionExpired()
                     } else {
-                        Toast.makeText(this@MainActivity, "Failed to load today's attendance: $response", Toast.LENGTH_LONG).show()
+                        showError("Failed to load attendance data")
                         updateButtonStates(null)
                     }
                 }

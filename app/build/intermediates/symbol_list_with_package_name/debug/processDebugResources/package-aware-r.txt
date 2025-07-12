@@ -3228,6 +3228,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id greetingTextView
 id group_divider
 id grouping
 id groups
@@ -3265,7 +3266,7 @@ id linear
 id listMode
 id list_item
 id loginButton
-id logoutButton
+id loginIdTextView
 id m3_side_sheet
 id markInButton
 id markOutButton

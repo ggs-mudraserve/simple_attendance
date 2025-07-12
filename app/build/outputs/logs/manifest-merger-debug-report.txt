@@ -28,12 +28,12 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/nitinsharma/.gradl
 MERGED from [androidx.customview:customview:1.1.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/8f2e5a6c503a9239102af1cba0ec7086/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.core:core-ktx:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/778b9dd219da87e78c17ce842578668c/transformed/core-ktx-1.10.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/03a1e5d99f942c9ee10a600614a5e5b0/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/5ef235f8e05bc1f9f147f95470692963/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/3d38b6173a1e283db88c14b76606aac9/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/559a38800c1bb16562bd9690cdede559/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/f629caa3cfa0ff12697ecd0f5f8749dd/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/756548192531952e7367ff18698dac97/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/03a1e5d99f942c9ee10a600614a5e5b0/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/f776028b51e9792ef20bcf60881aa9a3/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/e72c3d9e5d90e02d249d422978f28e64/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/8cb8c42f9f57cd6051f1f5f31b2aa553/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
@@ -183,6 +183,8 @@ MERGED from [androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/t
 MERGED from [androidx.core:core:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/be8e812c79e79c5416085b2d1df3b78d/transformed/core-1.10.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/778b9dd219da87e78c17ce842578668c/transformed/core-ktx-1.10.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.10.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/778b9dd219da87e78c17ce842578668c/transformed/core-ktx-1.10.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/03a1e5d99f942c9ee10a600614a5e5b0/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/03a1e5d99f942c9ee10a600614a5e5b0/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/5ef235f8e05bc1f9f147f95470692963/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/5ef235f8e05bc1f9f147f95470692963/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/3d38b6173a1e283db88c14b76606aac9/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
@@ -193,8 +195,6 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/nitinsharma/.gra
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/f629caa3cfa0ff12697ecd0f5f8749dd/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/756548192531952e7367ff18698dac97/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/756548192531952e7367ff18698dac97/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/03a1e5d99f942c9ee10a600614a5e5b0/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/03a1e5d99f942c9ee10a600614a5e5b0/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/f776028b51e9792ef20bcf60881aa9a3/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/nitinsharma/.gradle/caches/8.12/transforms/f776028b51e9792ef20bcf60881aa9a3/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/nitinsharma/.gradle/caches/8.12/transforms/e72c3d9e5d90e02d249d422978f28e64/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41

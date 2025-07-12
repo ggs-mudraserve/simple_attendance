@@ -78,8 +78,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun checkDeviceStatus(email: String, callback: (Boolean) -> Unit) {
+        val currentDeviceId = sessionManager.getDeviceId(this)
+        
         apiClient.makeRestRequest(
-            endpoint = "/profile?email=eq.$email&select=android_login",
+            endpoint = "/profile?email=eq.$email&select=android_login,device_id",
             token = null
         ) { success, response ->
             runOnUiThread {
@@ -88,7 +90,16 @@ class LoginActivity : AppCompatActivity() {
                         val profileType = object : com.google.gson.reflect.TypeToken<Array<Profile>>() {}.type
                         val profiles = gson.fromJson<Array<Profile>>(response, profileType)
                         if (profiles.isNotEmpty()) {
-                            callback(!profiles[0].android_login)
+                            val profile = profiles[0]
+                            val canLogin = when {
+                                // If not logged in anywhere, allow login
+                                !profile.android_login -> true
+                                // If logged in but same device, allow login (session refresh)
+                                profile.android_login && profile.device_id == currentDeviceId -> true
+                                // If logged in on different device, block login
+                                else -> false
+                            }
+                            callback(canLogin)
                         } else {
                             callback(true) // User doesn't exist, allow login attempt
                         }
