@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.company.simpleattendance.models.Attendance
+import com.company.simpleattendance.models.Profile
 import com.company.simpleattendance.models.WifiAllowed
 import com.company.simpleattendance.network.ApiClient
 import com.company.simpleattendance.utils.SessionManager
@@ -25,11 +26,12 @@ import java.util.*
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var greetingTextView: TextView
+    private lateinit var loginIdTextView: TextView
     private lateinit var dateTextView: TextView
     private lateinit var markInButton: Button
     private lateinit var markOutButton: Button
     private lateinit var viewAttendanceButton: Button
-    private lateinit var logoutButton: Button
     private lateinit var statusTextView: TextView
     private lateinit var progressBar: ProgressBar
     
@@ -58,15 +60,17 @@ class MainActivity : AppCompatActivity() {
         
         setupClickListeners()
         updateDateDisplay()
+        loadUserProfile()
         loadTodayAttendance()
     }
 
     private fun initViews() {
+        greetingTextView = findViewById(R.id.greetingTextView)
+        loginIdTextView = findViewById(R.id.loginIdTextView)
         dateTextView = findViewById(R.id.dateTextView)
         markInButton = findViewById(R.id.markInButton)
         markOutButton = findViewById(R.id.markOutButton)
         viewAttendanceButton = findViewById(R.id.viewAttendanceButton)
-        logoutButton = findViewById(R.id.logoutButton)
         statusTextView = findViewById(R.id.statusTextView)
         progressBar = findViewById(R.id.progressBar)
     }
@@ -77,13 +81,61 @@ class MainActivity : AppCompatActivity() {
         viewAttendanceButton.setOnClickListener { 
             startActivity(Intent(this, CalendarActivity::class.java))
         }
-        // TEST LOGOUT BUTTON - REMOVE IN PRODUCTION
-        logoutButton.setOnClickListener { performLogout() }
     }
 
     private fun updateDateDisplay() {
         val dateFormat = SimpleDateFormat("EEEE, MMMM dd, yyyy", Locale.getDefault())
         dateTextView.text = dateFormat.format(Date())
+    }
+
+    private fun loadUserProfile() {
+        // Check if profile data is already cached
+        val cachedFirstName = sessionManager.getFirstName()
+        val cachedEmpCode = sessionManager.getEmpCode()
+        
+        if (cachedFirstName != null && cachedEmpCode != null) {
+            // Use cached data
+            greetingTextView.text = "Hi $cachedFirstName"
+            loginIdTextView.text = "Login ID: $cachedEmpCode"
+            return
+        }
+        
+        // Fetch from API if not cached
+        val userId = sessionManager.getUserId() ?: return
+        
+        apiClient.makeRestRequest(
+            endpoint = "/profile?id=eq.$userId&select=first_name,emp_code",
+            token = sessionManager.getToken()
+        ) { success, response ->
+            runOnUiThread {
+                if (success) {
+                    try {
+                        val profileType = object : com.google.gson.reflect.TypeToken<Array<Profile>>() {}.type
+                        val profiles = gson.fromJson<Array<Profile>>(response, profileType)
+                        if (profiles.isNotEmpty()) {
+                            val firstName = profiles[0].first_name ?: "User"
+                            val empCode = profiles[0].emp_code ?: "N/A"
+                            
+                            // Save to local storage
+                            sessionManager.saveUserProfile(firstName, empCode)
+                            
+                            // Update UI
+                            greetingTextView.text = "Hi $firstName"
+                            loginIdTextView.text = "Login ID: $empCode"
+                        } else {
+                            greetingTextView.text = "Hi User"
+                            loginIdTextView.text = "Login ID: N/A"
+                        }
+                    } catch (e: JsonSyntaxException) {
+                        greetingTextView.text = "Hi User"
+                        loginIdTextView.text = "Login ID: N/A"
+                    }
+                } else {
+                    greetingTextView.text = "Hi User"
+                    loginIdTextView.text = "Login ID: N/A"
+                }
+            }
+        }
     }
 
     private fun loadTodayAttendance() {
@@ -103,12 +155,14 @@ class MainActivity : AppCompatActivity() {
                         val attendanceList = gson.fromJson<Array<Attendance>>(response, attendanceType)
                         updateButtonStates(if (attendanceList.isNotEmpty()) attendanceList[0] else null)
                     } catch (e: JsonSyntaxException) {
+                        Toast.makeText(this@MainActivity, "Error parsing attendance data", Toast.LENGTH_SHORT).show()
                         updateButtonStates(null)
                     }
                 } else {
                     if (response.contains("401")) {
                         handleSessionExpired()
                     } else {
+                        Toast.makeText(this@MainActivity, "Failed to load today's attendance: $response", Toast.LENGTH_LONG).show()
                         updateButtonStates(null)
                     }
                 }
@@ -163,8 +217,6 @@ class MainActivity : AppCompatActivity() {
         // Normalize BSSID to lowercase for database comparison
         val normalizedBssid = bssid.lowercase()
         
-        // Show current BSSID for debugging
-        Toast.makeText(this, "Checking BSSID: $normalizedBssid", Toast.LENGTH_SHORT).show()
         
         setLoading(true)
         
@@ -306,21 +358,12 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 
-    // TEST LOGOUT FUNCTION - REMOVE IN PRODUCTION
-    private fun performLogout() {
-        // Only clear local session - do NOT update database device status
-        // The android_login and device_id should only be managed by admin/system
-        sessionManager.clearSession()
-        Toast.makeText(this, "Logged out locally", Toast.LENGTH_SHORT).show()
-        redirectToLogin()
-    }
 
     private fun setLoading(loading: Boolean) {
         progressBar.visibility = if (loading) View.VISIBLE else View.GONE
         markInButton.isEnabled = !loading
         markOutButton.isEnabled = !loading
         viewAttendanceButton.isEnabled = !loading
-        logoutButton.isEnabled = !loading
     }
 
     private fun showSuccess(message: String) {

@@ -11,6 +11,8 @@ class SessionManager(context: Context) {
         private const val KEY_TOKEN = "access_token"
         private const val KEY_USER_ID = "user_id"
         private const val KEY_EMAIL = "email"
+        private const val KEY_FIRST_NAME = "first_name"
+        private const val KEY_EMP_CODE = "emp_code"
         private const val KEY_IS_LOGGED_IN = "is_logged_in"
     }
     
@@ -23,10 +25,21 @@ class SessionManager(context: Context) {
             .apply()
     }
     
+    fun saveUserProfile(firstName: String?, empCode: String?) {
+        prefs.edit()
+            .putString(KEY_FIRST_NAME, firstName)
+            .putString(KEY_EMP_CODE, empCode)
+            .apply()
+    }
+    
     fun getToken(): String? = prefs.getString(KEY_TOKEN, null)
     fun getUserId(): String? = prefs.getString(KEY_USER_ID, null)
     fun getEmail(): String? = prefs.getString(KEY_EMAIL, null)
+    fun getFirstName(): String? = prefs.getString(KEY_FIRST_NAME, null)
+    fun getEmpCode(): String? = prefs.getString(KEY_EMP_CODE, null)
     fun isLoggedIn(): Boolean = prefs.getBoolean(KEY_IS_LOGGED_IN, false)
+    
+    fun getUserEmail(): String? = getEmail()
     
     fun clearSession() {
         prefs.edit().clear().apply()

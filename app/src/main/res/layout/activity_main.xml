@@ -17,6 +17,25 @@
         android:textColor="@color/primary_color" />
 
     <TextView
+        android:id="@+id/greetingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi User"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/text_color" />
+
+    <TextView
+        android:id="@+id/loginIdTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login ID: user@example.com"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/secondary_text_color" />
+
+    <TextView
         android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,16 +69,6 @@
         android:textSize="16sp"
         android:backgroundTint="@color/primary_color" />
 
-    <!-- TEST LOGOUT BUTTON - REMOVE IN PRODUCTION -->
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Logout (Test Only)"
-        android:textSize="14sp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/error_color"
-        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/statusTextView"
